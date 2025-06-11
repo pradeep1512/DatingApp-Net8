@@ -39,10 +39,12 @@
         </div>
       </div>
       <div class="card-footer">
-        <button 
-        [disabled]="!editForm.dirty"
-        form="editForm" type="submit" 
-        class="btn btn-success col-12">
+        <button
+          [disabled]="!editForm.dirty"
+          form="editForm"
+          type="submit"
+          class="btn btn-success col-12"
+        >
           Save changes
         </button>
       </div>
@@ -95,7 +97,14 @@
           </div>
         </form>
       </tab>
-      <tab heading="Edit Photos"> Photo edit will be fo here </tab>
+      <tab heading="Edit Photos"> 
+        <app-photo-editor 
+        [member]="member"
+        (memberchange)="onMemberChange($event)"
+        >
+
+        </app-photo-editor>
+      </tab>
     </tabset>
   </div>
 </div>
