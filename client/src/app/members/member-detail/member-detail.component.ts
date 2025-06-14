@@ -18,6 +18,7 @@ private route = inject(ActivatedRoute);
 member?: Member;
 images: GalleryItem[] = [];
 
+
 ngOnInit(): void {
   this.loadMember()
 }
