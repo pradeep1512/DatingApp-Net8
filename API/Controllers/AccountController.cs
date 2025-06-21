@@ -39,7 +39,8 @@ IMapper mapper) : BaseApiController
         {
             Username = user.UserName,
             Token = tokenService.CreateToken(user),
-            knownAs = user.KnownAs
+            knownAs = user.KnownAs,
+            Gender = user.Gender
         };
     }
 
@@ -67,6 +68,7 @@ IMapper mapper) : BaseApiController
             Username = user.UserName,
             knownAs = user.KnownAs,
             Token = tokenService.CreateToken(user),
+            Gender = user.Gender,
             PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
         };
     }
